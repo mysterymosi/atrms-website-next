@@ -9,46 +9,67 @@
   --text-sm: 0.875rem;
   --text-sm--line-height: 1.5rem;
   --text-base: 1rem;
-  --text-base--line-height: 1.75rem;
+  --text-base--line-height: 1.55;
   --text-lg: 1.125rem;
-  --text-lg--line-height: 2rem;
+  --text-lg--line-height: 1.55;
   --text-xl: 1.25rem;
-  --text-xl--line-height: 2rem;
+  --text-xl--line-height: 1.55;
   --text-2xl: 1.5rem;
-  --text-2xl--line-height: 2rem;
-  --text-3xl: 2rem;
-  --text-3xl--line-height: 2.5rem;
-  --text-4xl: 2.5rem;
-  --text-4xl--line-height: 3.5rem;
-  --text-5xl: 3rem;
-  --text-5xl--line-height: 3.5rem;
+  --text-2xl--line-height: 1.2;
+  --text-3xl: 1.75rem;
+  --text-3xl--line-height: 1.15;
+  --text-4xl: 2.25rem;
+  --text-4xl--line-height: 1.08;
+  --text-5xl: 3.25rem;
+  --text-5xl--line-height: 1.08;
   --text-6xl: 3.75rem;
-  --text-6xl--line-height: 1;
-  --text-7xl: 4.5rem;
-  --text-7xl--line-height: 1.1;
-  --text-8xl: 6rem;
-  --text-8xl--line-height: 1;
-  --text-9xl: 8rem;
-  --text-9xl--line-height: 1;
+  --text-6xl--line-height: 1.08;
 
   --radius-4xl: 2rem;
 
-  /* --font-sans: var(--font-inter); */
-  /* --font-display: var(--font-lexend); */
-  --font-display: var(--font-outfit);
-  --font-sans: var(--font-outfit);
+  --font-display: var(--font-space-grotesk);
+  --font-sans: var(--font-ibm-plex-sans);
+  --font-mono: var(--font-ibm-plex-mono);
 
   --container-2xl: 40rem;
 
-  --color-background: #ffffff;
-  --color-foreground: #063b7a;
-  --color-primary: #063b7a;
-  --color-primary-hover: #0a4d9c;
-  --color-primary-active: #042850;
-  --color-primary-muted: #c5d4e8;
-  --color-secondary: #00a99d;
-  --color-secondary-hover: #00c2b5;
-  --color-secondary-active: #00877e;
-  --color-secondary-muted: #b3e8e3;
+  --color-background: #fbfcfe;
+  --color-foreground: #0c1b33;
+  --color-ink: #0c1b33;
+  --color-navy: #0b2a63;
+  --color-navy-2: #123a82;
+  --color-blue: #1768e0;
+  --color-blue-hover: #1257c2;
+  --color-primary: #0b2a63;
+  --color-primary-hover: #123a82;
+  --color-primary-active: #092050;
+  --color-primary-muted: #e7ecf8;
+  --color-secondary: #0eb6a0;
+  --color-secondary-hover: #0a8f7c;
+  --color-secondary-active: #08786a;
+  --color-secondary-muted: #def6f1;
   --color-supporting: #ffffff;
+  --color-muted: #5b6478;
+  --color-border: #dee3ee;
+  --color-surface: #f1f3f8;
+  --color-surface-1: #e7ecf8;
+  --color-surface-2: #def6f1;
+  --color-surface-3: #f1f3f8;
+
+  --animate-marquee: marquee 26s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-reduce-pause {
+    animation: none !important;
+  }
 }

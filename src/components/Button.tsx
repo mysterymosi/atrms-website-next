@@ -3,29 +3,29 @@ import clsx from 'clsx'
 
 const baseStyles = {
   solid:
-    'group inline-flex items-center justify-center rounded-full py-2 px-4 text-sm font-semibold focus-visible:outline-2 focus-visible:outline-offset-2',
+    'group inline-flex items-center justify-center gap-2 rounded-[9px] px-[22px] py-3 text-[14.5px] font-semibold transition duration-150 ease-out hover:-translate-y-px focus-visible:outline-2 focus-visible:outline-offset-2',
   outline:
-    'group inline-flex ring-1 items-center justify-center rounded-full py-2 px-4 text-sm',
+    'group inline-flex items-center justify-center gap-2 rounded-[9px] border px-[22px] py-3 text-[14.5px] font-semibold transition duration-150 ease-out hover:-translate-y-px focus-visible:outline-2 focus-visible:outline-offset-2',
 }
 
 const variantStyles = {
   solid: {
     slate:
-      'bg-primary text-supporting hover:bg-primary-hover hover:text-supporting active:bg-primary-active active:text-primary-muted focus-visible:outline-primary',
+      'bg-navy text-supporting hover:bg-primary-active focus-visible:outline-navy',
     primary:
-      'bg-primary text-supporting hover:text-supporting hover:bg-primary-hover active:bg-primary-active active:text-primary-muted focus-visible:outline-primary',
+      'bg-blue text-supporting shadow-[0_8px_20px_-6px_rgba(23,104,224,0.45)] hover:bg-blue-hover hover:shadow-[0_10px_24px_-4px_rgba(23,104,224,0.5)] focus-visible:outline-blue',
     secondary:
-      'bg-secondary text-supporting hover:text-supporting hover:bg-secondary-hover active:bg-secondary-active active:text-secondary-muted focus-visible:outline-secondary',
+      'bg-secondary text-supporting hover:bg-secondary-hover focus-visible:outline-secondary',
     white:
-      'bg-supporting text-primary hover:bg-primary-muted/40 active:bg-secondary-muted active:text-primary focus-visible:outline-supporting',
+      'bg-supporting text-navy hover:bg-surface focus-visible:outline-supporting',
   },
   outline: {
     slate:
-      'ring-primary/20 text-primary hover:text-primary-hover hover:ring-primary/40 active:bg-primary/5 active:text-primary-active focus-visible:outline-secondary focus-visible:ring-primary/30',
+      'border-border text-navy hover:border-blue hover:text-blue focus-visible:outline-blue',
     primary:
-      'ring-primary/30 text-primary hover:text-primary-hover hover:ring-primary active:bg-primary/5 active:text-primary-active focus-visible:outline-secondary focus-visible:ring-primary/40',
+      'border-border text-navy hover:border-blue hover:text-blue focus-visible:outline-blue',
     white:
-      'ring-supporting/70 text-supporting hover:ring-supporting active:ring-supporting/70 active:text-primary-muted focus-visible:outline-supporting',
+      'border-supporting/50 text-supporting hover:bg-supporting/10 focus-visible:outline-supporting',
   },
 }
 
@@ -60,9 +60,14 @@ export function Button({ className, ...props }: ButtonProps) {
     className,
   )
 
-  return typeof props.href === 'undefined' ? (
-    <button className={className} {...props} />
-  ) : (
-    <Link className={className} {...props} />
-  )
+  if (typeof props.href === 'undefined') {
+    return <button className={className} {...props} />
+  }
+
+  const href = typeof props.href === 'string' ? props.href : undefined
+  if (href?.startsWith('#') || href?.startsWith('mailto:')) {
+    return <a className={className} href={href}>{props.children}</a>
+  }
+
+  return <Link className={className} {...props} />
 }

@@ -1,4 +1,3 @@
-import { About } from '@/components/About'
 import { CallToAction } from '@/components/CallToAction'
 import { Dashboard } from '@/components/Dashboard'
 import { Faqs } from '@/components/Faqs'
@@ -8,30 +7,27 @@ import { Hero } from '@/components/Hero'
 import { HowItWorks } from '@/components/HowItWorks'
 import { Integrations } from '@/components/Integrations'
 import { PrimaryFeatures } from '@/components/PrimaryFeatures'
-import { Resources } from '@/components/Resources'
 import { SecondaryFeatures } from '@/components/SecondaryFeatures'
 import { Security } from '@/components/Security'
-import { TaxpayerServices } from '@/components/TaxpayerServices'
+import { TrustMarquee } from '@/components/TrustMarquee'
 import { WhyAtlas } from '@/components/WhyAtlas'
 
 export default function Home() {
   return (
     <>
       <Header />
-      <main>
+      <main className="[&_section[id]]:scroll-mt-24">
         <Hero />
+        <TrustMarquee />
         <PrimaryFeatures />
+        <Dashboard />
         <SecondaryFeatures />
         <HowItWorks />
-        <Dashboard />
-        {/* <TaxpayerServices /> */}
         <Integrations />
-        {/* <Security /> */}
         <WhyAtlas />
-        <About />
-        {/* <Resources /> */}
+        <Security />
         <Faqs />
-        {/* <CallToAction /> */}
+        <CallToAction />
       </main>
       <Footer />
     </>
