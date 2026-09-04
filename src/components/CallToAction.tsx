@@ -1,44 +1,22 @@
-import Image from 'next/image'
-
 import { Button } from '@/components/Button'
-import { Container } from '@/components/Container'
-import backgroundImage from '@/images/background-call-to-action.jpg'
 
 export function CallToAction() {
   return (
-    <section
-      id="get-started-today"
-      className="relative overflow-hidden bg-primary py-32"
-    >
-      <Image
-        className="absolute top-1/2 left-1/2 max-w-none -translate-x-1/2 -translate-y-1/2"
-        src={backgroundImage}
-        alt=""
-        width={2347}
-        height={1244}
-        unoptimized
-      />
-      <Container className="relative">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="font-display text-3xl tracking-tight text-supporting sm:text-4xl">
-            Ready to build better government systems?
-          </h2>
-          <p className="mt-4 text-lg tracking-tight text-supporting">
-            See how Atlas can support your organisation.
+    <section id="demo" className="pb-16 md:pb-24">
+      <div className="mx-6 flex flex-wrap items-center justify-between gap-8 rounded-3xl bg-linear-to-br from-navy to-navy-2 p-9 text-supporting lg:mx-10 lg:p-14">
+        <h2 className="max-w-[420px] font-display text-[28px] font-bold tracking-[-0.01em]">
+          Ready to see Atlas in one place?
+        </h2>
+        <div className="flex flex-col items-start gap-3.5">
+          <Button href="/register" color="white">
+            Request a demo
+          </Button>
+          <p className="font-mono text-[13px] text-[#b9c8ec]">
+            We&apos;ll follow up by email with next steps and a suggested time
+            for your demo.
           </p>
-          <div className="mt-10 flex flex-wrap justify-center gap-x-6 gap-y-4">
-            <Button href="/register" color="white">
-              Request a Demo
-            </Button>
-            <Button href="#contact" variant="outline" color="white">
-              Contact Us
-              <span aria-hidden="true" className="ml-2">
-                →
-              </span>
-            </Button>
-          </div>
         </div>
-      </Container>
+      </div>
     </section>
   )
 }

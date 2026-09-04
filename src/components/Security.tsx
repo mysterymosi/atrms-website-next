@@ -1,65 +1,60 @@
-import { Container } from '@/components/Container'
+import { Button } from '@/components/Button'
 
-const principles = [
+const points = [
   {
-    name: 'Security',
-    description: 'Protect revenue data with controls built into the platform.',
+    title: 'Encryption everywhere',
+    description: 'Data is encrypted in transit and at rest across the platform.',
   },
   {
-    name: 'Access Control',
-    description: 'Give the right people the right access, and nothing more.',
+    title: 'Role-based access',
+    description: 'Granular permissions so staff only see what their role requires.',
   },
   {
-    name: 'Audit Trails',
-    description: 'Keep a clear record of activity across processes and users.',
+    title: 'Full audit trail',
+    description: 'Every record change and assessment is logged and traceable.',
   },
   {
-    name: 'Data Protection',
-    description: 'Handle sensitive taxpayer and payment data with care.',
-  },
-  {
-    name: 'Backups',
-    description: 'Keep operations recoverable when something goes wrong.',
-  },
-  {
-    name: 'Reliable Infrastructure',
-    description: 'Run on infrastructure designed for continuous public service.',
+    title: 'Data residency options',
+    description: 'Deployment configurations to meet local data-hosting requirements.',
   },
 ]
 
 export function Security() {
   return (
-    <section
-      id="security"
-      aria-label="Atlas security and trust"
-      className="pt-20 pb-14 sm:pt-32 sm:pb-20 lg:pb-32"
-    >
-      <Container>
-        <div className="mx-auto max-w-2xl md:text-center">
-          <h2 className="font-display text-3xl tracking-tight text-primary sm:text-4xl">
-            Built with trust at the core.
-          </h2>
-          <p className="mt-4 text-lg tracking-tight text-primary/80">
-            Atlas is designed around the controls public-sector organisations
-            expect.
-          </p>
+    <section id="security" className="py-16 md:py-24">
+      <div className="mx-6 rounded-3xl bg-navy p-9 text-supporting lg:mx-10 lg:p-14">
+        <div className="mx-auto grid max-w-[1160px] gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12">
+          <div>
+            <p className="mb-[18px] font-mono text-[13px] font-medium tracking-[0.02em] text-[#7fe8d6]">
+              Security & trust
+            </p>
+            <h2 className="font-display text-[32px] font-bold tracking-[-0.01em] text-supporting">
+              Public revenue deserves serious data protection.
+            </h2>
+            <p className="mt-3.5 max-w-[420px] text-[15.5px] text-[#b9c8ec]">
+              Atlas is built with government-grade data handling in mind, from
+              encryption in transit and at rest to strict access controls on
+              every account.
+            </p>
+            <Button href="#contact" variant="outline" color="white" className="mt-6">
+              Talk to us about compliance
+            </Button>
+          </div>
+          <ul className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+            {points.map((point) => (
+              <li
+                key={point.title}
+                className="rounded-xl border border-white/10 bg-white/5 p-[18px]"
+              >
+                <h3 className="mb-1.5 font-display text-[14.5px] font-bold">
+                  {point.title}
+                </h3>
+                <p className="text-[12.5px] text-[#a9bae2]">{point.description}</p>
+              </li>
+            ))}
+          </ul>
         </div>
-        <ul
-          role="list"
-          className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 sm:grid-cols-2 lg:max-w-none lg:grid-cols-3"
-        >
-          {principles.map((principle) => (
-            <li key={principle.name}>
-              <h3 className="font-display text-lg text-primary">
-                {principle.name}
-              </h3>
-              <p className="mt-2 text-sm text-primary/70">
-                {principle.description}
-              </p>
-            </li>
-          ))}
-        </ul>
-      </Container>
+      </div>
     </section>
   )
 }

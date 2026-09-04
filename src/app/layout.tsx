@@ -1,5 +1,5 @@
 import { type Metadata } from 'next'
-import { Inter, Lexend, Outfit } from 'next/font/google'
+import { IBM_Plex_Mono, IBM_Plex_Sans, Space_Grotesk } from 'next/font/google'
 import clsx from 'clsx'
 
 import '@/styles/tailwind.css'
@@ -10,25 +10,28 @@ export const metadata: Metadata = {
     default: 'Atlas - Smarter systems for better government',
   },
   description:
-    'Atlas helps governments manage revenue, tax, payments and compliance from one connected platform.',
+    'Atlas is a revenue management system that connects taxpayer registration, assessment, tax accounts, collection and reconciliation in one platform.',
 }
 
-const inter = Inter({
+const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-inter',
+  variable: '--font-space-grotesk',
+  weight: ['500', '600', '700'],
 })
 
-const lexend = Lexend({
+const ibmPlexSans = IBM_Plex_Sans({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-lexend',
+  variable: '--font-ibm-plex-sans',
+  weight: ['400', '500', '600', '700'],
 })
 
-const outfit = Outfit({
+const ibmPlexMono = IBM_Plex_Mono({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-outfit',
+  variable: '--font-ibm-plex-mono',
+  weight: ['400', '500'],
 })
 
 export default function RootLayout({
@@ -40,13 +43,13 @@ export default function RootLayout({
     <html
       lang="en"
       className={clsx(
-        'h-full scroll-smooth bg-supporting antialiased',
-        inter.variable,
-        lexend.variable,
-        outfit.variable,
+        'h-full scroll-smooth bg-background antialiased',
+        spaceGrotesk.variable,
+        ibmPlexSans.variable,
+        ibmPlexMono.variable,
       )}
     >
-      <body className="flex h-full flex-col">{children}</body>
+      <body className="flex min-h-full flex-col font-sans text-ink">{children}</body>
     </html>
   )
 }
