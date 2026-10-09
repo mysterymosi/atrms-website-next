@@ -1,5 +1,6 @@
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
+import { DEMO_CALENDLY_URL } from '@/lib/links'
 
 const bars = [
   { height: '38%', className: 'bg-linear-to-b from-[#4d7de8] to-blue' },
@@ -45,7 +46,7 @@ export function Hero() {
               where things stand.
             </p>
             <div className="mt-8 flex flex-wrap gap-3.5">
-              <Button href="/register">Request a demo</Button>
+              <Button href={DEMO_CALENDLY_URL}>Request a demo</Button>
               <Button href="#workflow" variant="outline">
                 See how it works
               </Button>

@@ -11,6 +11,7 @@ import {
 } from 'motion/react'
 
 import { Button } from '@/components/Button'
+import { DEMO_CALENDLY_URL } from '@/lib/links'
 
 interface CardProps {
   number: string
@@ -199,7 +200,7 @@ function PathCta({ pathLength }: { pathLength: MotionValue<number> }) {
       transition={{ type: 'spring', stiffness: 260, damping: 22 }}
     >
       <Button
-        href="/register"
+        href={DEMO_CALENDLY_URL}
         {...buttonProps}
         className="transition-all duration-500"
       >

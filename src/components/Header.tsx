@@ -11,6 +11,7 @@ import clsx from 'clsx'
 
 import { Button } from '@/components/Button'
 import { Logo } from '@/components/Logo'
+import { DEMO_CALENDLY_URL } from '@/lib/links'
 
 const navigation = [
   { name: 'Platform', href: '#platform' },
@@ -84,7 +85,7 @@ function MobileNavigation() {
         >
           Contact sales
         </PopoverButton>
-        <Button href="/register" className="mt-3 px-4 py-2 text-[13.5px]">
+        <Button href={DEMO_CALENDLY_URL} className="mt-3 px-4 py-2 text-[13.5px]">
           Request a demo
         </Button>
       </PopoverPanel>
@@ -115,7 +116,7 @@ export function Header() {
           >
             Contact sales
           </a>
-          <Button href="/register" className="px-4 py-[9px] text-[13.5px]">
+          <Button href={DEMO_CALENDLY_URL} className="px-4 py-[9px] text-[13.5px]">
             Request a demo
           </Button>
           <div className="min-[900px]:hidden">

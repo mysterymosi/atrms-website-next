@@ -1,5 +1,6 @@
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
+import { DEMO_CALENDLY_URL } from '@/lib/links'
 
 const services = [
   'Register',
@@ -42,7 +43,7 @@ export function TaxpayerServices() {
           ))}
         </ul>
         <div className="mt-12 text-center">
-          <Button href="/register" variant="outline">
+          <Button href={DEMO_CALENDLY_URL} variant="outline">
             Explore Taxpayer Services
             <span aria-hidden="true" className="ml-2">
               →

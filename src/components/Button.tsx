@@ -64,9 +64,23 @@ export function Button({ className, ...props }: ButtonProps) {
     return <button className={className} {...props} />
   }
 
-  const href = typeof props.href === 'string' ? props.href : undefined
-  if (href?.startsWith('#') || href?.startsWith('mailto:')) {
-    return <a className={className} href={href}>{props.children}</a>
+  if (typeof props.href === 'string') {
+    const href = props.href
+    const isExternal =
+      href.startsWith('http://') || href.startsWith('https://')
+    if (href.startsWith('#') || href.startsWith('mailto:') || isExternal) {
+      return (
+        <a
+          className={className}
+          href={href}
+          {...(isExternal
+            ? { target: '_blank', rel: 'noopener noreferrer' }
+            : {})}
+        >
+          {props.children}
+        </a>
+      )
+    }
   }
 
   return <Link className={className} {...props} />

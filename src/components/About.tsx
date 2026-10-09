@@ -1,5 +1,6 @@
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
+import { DEMO_CALENDLY_URL } from '@/lib/links'
 import { cn } from '@/lib/utils'
 
 const focusAreas = [
@@ -49,7 +50,7 @@ export function About() {
               revenue administration, compliance and public-sector operations.
             </p>
             <div className="mt-10">
-              <Button href="/register" variant="outline" color="white">
+              <Button href={DEMO_CALENDLY_URL} variant="outline" color="white">
                 About Atlas
                 <span aria-hidden="true" className="ml-2">
                   →

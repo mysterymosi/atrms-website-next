@@ -2,6 +2,7 @@ import clsx from 'clsx'
 
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
+import { DEMO_CALENDLY_URL } from '@/lib/links'
 
 function SwirlyDoodle(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -137,7 +138,7 @@ export function Pricing() {
             name="Starter"
             price="$9"
             description="Good for anyone who is self-employed and just getting started."
-            href="/register"
+            href={DEMO_CALENDLY_URL}
             features={[
               'Send 10 quotes and invoices',
               'Connect up to 2 bank accounts',
@@ -151,7 +152,7 @@ export function Pricing() {
             name="Small business"
             price="$15"
             description="Perfect for small / medium sized businesses."
-            href="/register"
+            href={DEMO_CALENDLY_URL}
             features={[
               'Send 25 quotes and invoices',
               'Connect up to 5 bank accounts',
@@ -166,7 +167,7 @@ export function Pricing() {
             name="Enterprise"
             price="$39"
             description="For even the biggest enterprise companies."
-            href="/register"
+            href={DEMO_CALENDLY_URL}
             features={[
               'Send unlimited quotes and invoices',
               'Connect up to 15 bank accounts',

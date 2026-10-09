@@ -5,6 +5,7 @@ import { Button } from '@/components/Button'
 import { TextField } from '@/components/Fields'
 import { Logo } from '@/components/Logo'
 import { SlimLayout } from '@/components/SlimLayout'
+import { DEMO_CALENDLY_URL } from '@/lib/links'
 
 export const metadata: Metadata = {
   title: 'Sign In',
@@ -24,12 +25,14 @@ export default function Login() {
       <p className="mt-2 text-sm text-primary/80">
         Don’t have an account?{' '}
         <Link
-          href="/register"
+          href={DEMO_CALENDLY_URL}
           className="font-medium text-secondary hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          Sign up
-        </Link>{' '}
-        for a free trial.
+          Request a demo
+        </Link>
+        .
       </p>
       <form action="#" className="mt-10 grid grid-cols-1 gap-y-8">
         <TextField

@@ -1,4 +1,5 @@
 import { Button } from '@/components/Button'
+import { DEMO_CALENDLY_URL } from '@/lib/links'
 
 export function CallToAction() {
   return (
@@ -8,7 +9,7 @@ export function CallToAction() {
           Ready to see Atlas in one place?
         </h2>
         <div className="flex flex-col items-start gap-3.5">
-          <Button href="/register" color="white">
+          <Button href={DEMO_CALENDLY_URL} color="white">
             Request a demo
           </Button>
           <p className="font-mono text-[13px] text-[#b9c8ec]">
