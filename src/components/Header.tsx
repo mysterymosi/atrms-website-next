@@ -14,11 +14,12 @@ import { Logo } from '@/components/Logo'
 import { DEMO_CALENDLY_URL } from '@/lib/links'
 
 const navigation = [
-  { name: 'Platform', href: '#platform' },
-  { name: 'Solutions', href: '#solutions' },
-  { name: 'How it works', href: '#workflow' },
-  { name: 'Security', href: '#security' },
-  { name: 'FAQ', href: '#faq' },
+  { name: 'Platform', href: '/#platform' },
+  { name: 'Solutions', href: '/#solutions' },
+  { name: 'How it works', href: '/#workflow' },
+  { name: 'Security', href: '/#security' },
+  { name: 'Blog', href: '/blog' },
+  { name: 'FAQ', href: '/#faq' },
 ]
 
 function Brand() {
@@ -98,28 +99,28 @@ export function Header() {
     <header className="sticky top-0 z-50 shrink-0 border-b border-border bg-background/92 backdrop-blur-[10px] backdrop-saturate-[180%]">
       <nav className="mx-auto flex max-w-[1240px] items-center justify-between px-6 py-4 lg:px-10">
         <Brand />
-        <div className="hidden items-center gap-[30px] min-[900px]:flex">
+        <div className="hidden items-center gap-[30px] min-[1024px]:flex">
           {navigation.map((item) => (
-            <a
+            <Link
               key={item.name}
               href={item.href}
               className="text-[15px] font-medium text-ink/80 transition hover:text-blue"
             >
               {item.name}
-            </a>
+            </Link>
           ))}
         </div>
         <div className="flex items-center gap-4">
           <a
             href="#contact"
-            className="hidden text-sm font-semibold text-navy/85 hover:text-navy min-[900px]:inline"
+            className="hidden text-sm font-semibold text-navy/85 hover:text-navy min-[1024px]:inline"
           >
             Contact sales
           </a>
           <Button href={DEMO_CALENDLY_URL} className="px-4 py-[9px] text-[13.5px]">
             Request a demo
           </Button>
-          <div className="min-[900px]:hidden">
+          <div className="min-[1024px]:hidden">
             <MobileNavigation />
           </div>
         </div>
