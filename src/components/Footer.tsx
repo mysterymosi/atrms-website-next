@@ -7,27 +7,28 @@ const footerColumns = [
   {
     title: 'PLATFORM',
     links: [
-      { name: 'Revenue Management', href: '#platform' },
-      { name: 'Tax Administration', href: '#platform' },
-      { name: 'Enforcement and Compliance', href: '#platform' },
-      { name: 'Payments', href: '#solutions' },
-      { name: 'Tax Accounts', href: '#platform' },
-      { name: 'Harmonized Bill', href: '#platform' },
+      { name: 'Revenue Management', href: '/#platform' },
+      { name: 'Tax Administration', href: '/#platform' },
+      { name: 'Enforcement and Compliance', href: '/#platform' },
+      { name: 'Payments', href: '/#solutions' },
+      { name: 'Tax Accounts', href: '/#platform' },
+      { name: 'Harmonized Bill', href: '/#platform' },
     ],
   },
   {
     title: 'COMPANY',
     links: [
-      { name: 'About', href: '#why-atlas' },
-      { name: 'Partners', href: '#integrations' },
+      { name: 'About', href: '/#why-atlas' },
+      { name: 'Partners', href: '/#integrations' },
       { name: 'Contact', href: '#contact' },
     ],
   },
   {
     title: 'RESOURCES',
     links: [
-      { name: 'FAQ', href: '#faq' },
-      { name: 'Security', href: '#security' },
+      { name: 'Blog', href: '/blog' },
+      { name: 'FAQ', href: '/#faq' },
+      { name: 'Security', href: '/#security' },
       { name: 'Documentation', href: '#' },
     ],
   },
